@@ -1,6 +1,6 @@
 [toolchain]
 anchor_version = "0.31.1"
-solana_version = "2.1.21"
+solana_version = "3.1.13"
 
 [features]
 resolution = true
@@ -19,13 +19,10 @@ url = "https://api.apr.dev"
 
 [provider]
 cluster = "devnet"
-wallet = "./keypairs/keypair.json"
+wallet = "./kamui-program/keypairs/keypair.json"
 
 [workspace]
-members = ["programs/kamui-vrf", "programs/kamui-vrf-consumer"]
-
-[scripts]
-test = "cd tests/anchor && yarn run ts-mocha --require ts-node/register --require tsconfig-paths/register -p ./tsconfig.json -t 1000000 tests/anchor/tests/*.ts"
+members = ["kamui-program/programs/kamui-vrf", "kamui-program/programs/kamui-vrf-consumer"]
 
 [test]
 startup_wait = 10000
